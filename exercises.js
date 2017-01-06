@@ -5,7 +5,12 @@
 
 // Step One: Define the function.
 function greeting(guest){ // takes in a parameter named 'guest' which acts like a local variable inside the function
- return "Good afternoon " + guest + ".";  // the output value after the function is invoked
+	if (typeof guest === "string") {
+		return "Good afternoon " + guest + ".";  // the output value after the function is invoked
+	}
+	else {
+		return "Please enter in a string. (function greeting())";
+	}
 }
 greeting("Mr. Smith"); // invoking or calling the function to execute the code (instructions) inside the function.
 
@@ -82,8 +87,9 @@ function subtract(num1, num2) {
 	}
 }
 
-difference = subtract(17,8)
+difference = subtract(17,8);
 console.log(difference);
+console.log(subtract(17,true));
 
 /*
  * #4
@@ -110,6 +116,7 @@ function multiply(num1, num2) {
 
 product = multiply(21,232);
 console.log(product);
+console.log(multiply("!",232));
 
 /*
  * #5
@@ -136,6 +143,7 @@ function divide(num1,num2) {
 
 quotient=divide(7,8);
 console.log(quotient);
+console.log(divide(7,"?"));
 
 /*
  * #6
@@ -184,6 +192,7 @@ function checkDifference(x) {
 }
 
 console.log(checkDifference(difference));
+console.log(checkDifference("e"));
 
 /*
  * #8
@@ -254,7 +263,7 @@ var bango4 = 7;
 var bango5 = 32;
 
 function addThenSubtract(num1,num2,num3) {
-	if ((typeof num1 === "number") && (typeof num3 === "number") && (typeof num3 === "number")) {
+	if ((typeof num1 === "number") && (typeof num2 === "number") && (typeof num3 === "number")) {
 		var sum = add(num1, num2);
 		return subtract(sum, num3);
 	}
@@ -271,6 +280,7 @@ function addThenSubtract(num1, num2, num3) {
 */
 
 console.log(addThenSubtract(bango3,bango4,bango5));
+console.log(addThenSubtract(bango3,bango4,"sandwich"));
 
 /*
  * #11
@@ -287,7 +297,7 @@ console.log(addThenSubtract(bango3,bango4,bango5));
 */ 
 
 function multiplyThenDivide(num1,num2,num3) {
-	if ((typeof num1 === "number") && (typeof num3 === "number") && (typeof num3 === "number")) {
+	if ((typeof num1 === "number") && (typeof num2 === "number") && (typeof num3 === "number")) {
 		var product = multiply(num1,num2);
 		return divide(num3,product);
 	}
@@ -297,6 +307,7 @@ function multiplyThenDivide(num1,num2,num3) {
 }
 
 console.log(multiplyThenDivide(bango3,bango4,bango5));
+console.log(multiplyThenDivide(bango3,"sandwich",bango5));
 
 /*
  * #12
@@ -320,6 +331,7 @@ function createFullName(firstName, lastName) {
 }
 
 console.log(createFullName("Jayden","Smith"));
+console.log(createFullName("Jayden",null));
 
 /*
  * #13 
@@ -337,10 +349,16 @@ console.log(createFullName("Jayden","Smith"));
 
 function eatFood(firstName,lastName,food) {
 	var fullName = createFullName(firstName,lastName);
-	return fullName + " eats " + food + " everyday for breakfest.";
+	if (typeof firstName === "string" && typeof lastName === "string" && typeof food === "string") {
+		return fullName + " eats " + food + " everyday for breakfest.";
+	}
+	else {
+		return "Please enter in 3 strings. (function eatFood())";
+	}
 }
 
 console.log(eatFood("Barack","Obama","cereal"));
+console.log(eatFood("Barack","Obama",undefined));
 
 /************** ENGAGE HYPERDRIVE **************/
 /* No more training wheels! For the exercises #14-18, use the experience you've
@@ -360,11 +378,12 @@ function shoeSize(inches) {
 		return "This shoe size is " + (inches*2.54) + " in centimeters(cm).";
 	}
 	else {
-		return "Please enter in a number."
+		return "Please enter in a number. (function shoeSize())";
 	}
 }
 
 console.log(shoeSize(9));
+console.log(shoeSize(false));
 
 /*
  * #15
@@ -377,11 +396,18 @@ console.log(shoeSize(9));
 */
  
 function allCaps(str) {
-	return str.toUpperCase();
+	if (typeof str === "string") {
+		return str.toUpperCase();
+	}
+	else {
+		return "Please enter a string. (function allCaps())";
+	}
 }
 
 var phrase = "believe you can and you're halfway there.";
-console.log(allCaps(phrase))
+console.log(allCaps(phrase));
+console.log(allCaps(3));
+
 
 /*
  * #16
@@ -392,10 +418,16 @@ console.log(allCaps(phrase))
 */
 
 function oneCap(str) {
-	return str.charAt(0).toUpperCase() + str.slice(1);
+	if (typeof str === "string") {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+	}
+	else {
+		return "Please enter a string. (function oneCap())";
+	}
 }
 
 console.log(oneCap(phrase));
+console.log(oneCap(2));
 
 
 /*
@@ -409,19 +441,25 @@ console.log(oneCap(phrase));
  * Store the return value to a variable named `canDrink`. Console.log your result.
  */
 
-var drinkingThreshold = 21;
+var drinkingAgeThreshold = 21;
 
 function verifyDrinkingAge(age) {
-	if (age >= drinkingThreshold) {
-		return true;
+	if (typeof age === "number") {
+		if (age >= drinkingAgeThreshold) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	else {
-		return false;
+		return "Please enter a number. (function verifyDrinkingAge())";
 	}
 }
 
 var canDrink = verifyDrinkingAge(16);
 console.log(canDrink);
+console.log(verifyDrinkingAge("nah"));
 
 /**
  * #18
@@ -430,11 +468,16 @@ console.log(canDrink);
  */
 
 function throwParty() {
-	if (canDrink) {
-		return "Cheee Hoo! We going to da party!";
+	if (typeof canDrink === "boolean") {
+		if (canDrink) {
+			return "Cheee Hoo! We going to da party!";
+		}
+		else {
+			return "Meh, see you at Starbucks.";
+		}
 	}
 	else {
-		return "Meh, see you at Starbucks.";
+		return "Please make sure that variable canDrink is a boolean value. (function throwParty())";
 	}
 }
 
