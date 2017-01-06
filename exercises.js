@@ -280,7 +280,7 @@ console.log(createFullName("Jayden","Smith"));
 
 function eatFood(firstName,lastName,food) {
 	var fullName = createFullName(firstName,lastName);
-	return fullName + " eats " + food + " everyday for breakfest."
+	return fullName + " eats " + food + " everyday for breakfest.";
 }
 
 console.log(eatFood("Barack","Obama","cereal"));
@@ -299,7 +299,7 @@ console.log(eatFood("Barack","Obama","cereal"));
 */
 
 function shoeSize(inches) {
-	return "This shoe size is " + (inches*2.54) + " in centimeters(cm)."
+	return "This shoe size is " + (inches*2.54) + " in centimeters(cm).";
 }
 
 console.log(shoeSize(9));
@@ -372,7 +372,7 @@ function throwParty() {
 		return "Cheee Hoo! We going to da party!";
 	}
 	else {
-		return "Meh, see you at Starbucks."
+		return "Meh, see you at Starbucks.";
 	}
 }
 
