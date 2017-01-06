@@ -60,7 +60,7 @@ function add(num1, num2) {
 	}
 }
 
-sum = add(4,3);
+sum = add(bango1,bango2);
 console.log(sum);
 console.log(add("q", 13));
 
@@ -87,7 +87,7 @@ function subtract(num1, num2) {
 	}
 }
 
-difference = subtract(17,8);
+difference = subtract(bango1,bango2);
 console.log(difference);
 console.log(subtract(17,true));
 
@@ -114,7 +114,7 @@ function multiply(num1, num2) {
 	}
 }
 
-product = multiply(21,232);
+product = multiply(bango1,bango2);
 console.log(product);
 console.log(multiply("!",232));
 
@@ -141,7 +141,7 @@ function divide(num1,num2) {
 	}
 }
 
-quotient=divide(7,8);
+quotient=divide(bango1,bango2);
 console.log(quotient);
 console.log(divide(7,"?"));
 
