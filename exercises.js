@@ -47,11 +47,17 @@ var bango2 = 43;
 */
 
 function add(num1, num2) {
-	return num1 + num2;
+	if (((typeof num1) === "number") && ((typeof num2) === "number")) {
+		return num1 + num2;
+	}
+	else {
+		return "Please enter in 2 numbers. (function add())";
+	}
 }
 
 sum = add(4,3);
 console.log(sum);
+console.log(add("q", 13));
 
 /*
  * #3
@@ -68,7 +74,12 @@ console.log(sum);
 */ 
 
 function subtract(num1, num2) {
-	return num1 - num2;
+	if (((typeof num1) === "number") && ((typeof num2) === "number")) {
+		return num1 - num2;
+	}
+	else {
+		return "Please enter in 2 numbers. (function subtract())";
+	}
 }
 
 difference = subtract(17,8)
@@ -89,7 +100,12 @@ console.log(difference);
 */
 
 function multiply(num1, num2) {
-	return num1 * num2;
+	if (((typeof num1) === "number") && ((typeof num2) === "number")) {
+		return num1 * num2;
+	}
+	else {
+		return "Please enter in 2 numbers. (function multiply())";
+	}
 }
 
 product = multiply(21,232);
@@ -110,7 +126,12 @@ console.log(product);
 */
 
 function divide(num1,num2) {
-	return num1/num2;
+	if (((typeof num1) === "number") && ((typeof num2) === "number")) {
+		return num1 / num2;
+	}
+	else {
+		return "Please enter in 2 numbers. (function divide())";
+	}
 }
 
 quotient=divide(7,8);
@@ -129,10 +150,16 @@ console.log(quotient);
 */
 
 function checkSum(x) {
-	return "Mariah Carey has been married " + x + " amount of times.";
+	if ((typeof x) === "number") {
+		return "Mariah Carey has been married " + x + " amount of times.";
+	}
+	else {
+		return "Please enter in a number. (function checkSum())";
+	}
 }
 
 console.log(checkSum(sum));
+console.log(checkSum("e"));
 
 
 /*
@@ -148,7 +175,12 @@ console.log(checkSum(sum));
 */ 
 
 function checkDifference(x) {
-	return "Last night I dreamt that I ate " + x + " Taco Bell soft tacos.";
+	if ((typeof x) === "number") {
+		return "Last night I dreamt that I ate " + x + " Taco Bell soft tacos.";
+	}
+	else {
+		return "Please enter in a number. (function checkDifference())";
+	}
 }
 
 console.log(checkDifference(difference));
@@ -165,7 +197,12 @@ console.log(checkDifference(difference));
 */
 
 function checkProduct() {
-	return sum*product;
+	if (((typeof sum) === "number") && ((typeof product) === "number")) {
+		return sum*product;
+	}
+	else {
+		return "Please make sure that variables \"sum\" and \"product\" are numbers. (function checkProduct())";
+	}
 }
 
 console.log(checkProduct());
@@ -182,7 +219,12 @@ console.log(checkProduct());
 */
 
 function checkQuotient() {
-	return product*quotient;
+	if (((typeof product) === "number") && ((typeof quotient) === "number")) {
+		return product*quotient;
+	}
+	else {
+		return "Please make sure that variables \"product\" and \"quotient\" are numbers. (function checkQuotient())";
+	}
 }
 
 console.log(checkQuotient());
@@ -212,8 +254,13 @@ var bango4 = 7;
 var bango5 = 32;
 
 function addThenSubtract(num1,num2,num3) {
-	var sum = add(num1, num2);
-	return subtract(sum, num3);
+	if ((typeof num1 === "number") && (typeof num3 === "number") && (typeof num3 === "number")) {
+		var sum = add(num1, num2);
+		return subtract(sum, num3);
+	}
+	else {
+		return "Please enter in 3 numbers. (function addThenSubtract())";
+	}
 }
 
 
@@ -240,8 +287,13 @@ console.log(addThenSubtract(bango3,bango4,bango5));
 */ 
 
 function multiplyThenDivide(num1,num2,num3) {
-	var product = multiply(num1,num2);
-	return divide(num3,product);
+	if ((typeof num1 === "number") && (typeof num3 === "number") && (typeof num3 === "number")) {
+		var product = multiply(num1,num2);
+		return divide(num3,product);
+	}
+	else {
+		return "Please enter in 3 numbers. (function multiplyThenDivide())";
+	}
 }
 
 console.log(multiplyThenDivide(bango3,bango4,bango5));
@@ -259,7 +311,12 @@ console.log(multiplyThenDivide(bango3,bango4,bango5));
 */
 
 function createFullName(firstName, lastName) {
-	return firstName + " " + lastName;
+	if ((typeof firstName === "string") && (typeof lastName === "string")) {
+		return firstName + " " + lastName;
+	}
+	else {
+		return "Please enter in 2 strings. (function createFullName())";
+	}
 }
 
 console.log(createFullName("Jayden","Smith"));
