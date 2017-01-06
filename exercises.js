@@ -356,7 +356,12 @@ console.log(eatFood("Barack","Obama","cereal"));
 */
 
 function shoeSize(inches) {
-	return "This shoe size is " + (inches*2.54) + " in centimeters(cm).";
+	if (typeof inches === "number") {
+		return "This shoe size is " + (inches*2.54) + " in centimeters(cm).";
+	}
+	else {
+		return "Please enter in a number."
+	}
 }
 
 console.log(shoeSize(9));
@@ -372,7 +377,7 @@ console.log(shoeSize(9));
 */
  
 function allCaps(str) {
-return str.toUpperCase();
+	return str.toUpperCase();
 }
 
 var phrase = "believe you can and you're halfway there.";
